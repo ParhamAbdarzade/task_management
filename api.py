@@ -39,7 +39,7 @@ async def delete_task(task_id: int):
 
 @router.get('/tasks/')
 async def read_all_tasks():
-    res = controller.read_all_task()
+    res = controller.read_all_tasks()
     if res:
         return res
-    raise HTTPException(status_code=404, detail="Internal Error")
+    raise HTTPException(status_code=404, detail="DB is empty")
